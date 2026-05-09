@@ -1,0 +1,18 @@
+Buatlah sebuah website e-commerce yang bersih, elegan, dan mudah dikelola menggunakan React (Vite) dan Tailwind CSS. 
+
+Fitur utama yang harus ada:
+1. Katalog produk yang responsif dengan desain kartu produk (product card) yang menarik.
+2. Keranjang belanja (shopping cart) fungsional dengan fitur penambahan/pengurangan kuantitas secara dinamis.
+3. Fitur checkout dengan perhitungan total harga dan simulasi transaksi yang menampilkan notifikasi sukses (menggunakan react-hot-toast).
+4. Dashboard mini / fitur pencarian (search bar) di atas daftar produk untuk memfilter produk berdasarkan nama atau kategori secara real-time.
+
+Desain visual:
+- Gunakan tema gelap (dark mode) yang elegan dengan warna latar belakang bernuansa hitam/abu-abu gelap (seperti #121212 atau #1E1E1E).
+- Gunakan aksen warna emas (gold) untuk memberikan kesan premium dan mewah pada tombol, teks tertentu, dan efek fokus.
+- Implementasikan desain UI modern (seperti glassmorphism ringan, shadow lembut, dan transisi halus).
+- Gunakan ikon dari `lucide-react`.
+
+Persyaratan Teknis:
+- Gunakan React fungsional dengan Hooks (useState, useMemo).
+- Gunakan Tailwind CSS (versi terbaru/v4) untuk styling.
+- Kode harus terstruktur dengan baik (pisahkan komponen Navbar, ProductCard, dan Cart) serta memiliki komentar yang jelas (well-commented) agar mudah dipelajari dan dimodifikasi di masa depan.

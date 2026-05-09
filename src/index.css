@@ -1,0 +1,186 @@
+/* ============================================================
+   Money Market Dashboard — Global Styles
+   Design System: Dark Zinc base + Glassmorphism + Inter font
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN TOKENS via @theme
+   ============================================================ */
+@theme {
+  /* Brand & Accent */
+  --color-accent-blue:    #3b82f6;
+  --color-accent-blue-dim: #1d4ed8;
+  --color-accent-gold:    #d4af37;
+  --color-accent-gold-dim: #aa8c2c;
+
+  /* Status Colors */
+  --color-positive:       #10b981; /* emerald-500 */
+  --color-positive-dim:   #065f46;
+  --color-negative:       #f43f5e; /* rose-500 */
+  --color-negative-dim:   #9f1239;
+
+  /* Surface Colors */
+  --color-surface-0:      #09090b; /* zinc-950 — page root */
+  --color-surface-1:      #111113; /* slightly lighter for panels */
+  --color-surface-2:      #18181b; /* zinc-900 */
+  --color-surface-3:      #27272a; /* zinc-800 */
+
+  /* Text */
+  --color-text-primary:   #f4f4f5;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted:     #52525b;
+  --color-text-dim:       #3f3f46;
+
+  /* Borders */
+  --color-border-subtle:  rgba(255, 255, 255, 0.05);
+  --color-border-soft:    rgba(255, 255, 255, 0.09);
+  --color-border-medium:  rgba(255, 255, 255, 0.14);
+
+  /* Font */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ============================================================
+   BASE RESETS & GLOBAL
+   ============================================================ */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface-0);
+    color: var(--color-text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Remove default button/input styles */
+  button { cursor: pointer; border: none; background: none; font-family: inherit; }
+  input, select { font-family: inherit; }
+  a { text-decoration: none; color: inherit; }
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR — Elegant minimal style
+   ============================================================ */
+::-webkit-scrollbar         { width: 5px; height: 5px; }
+::-webkit-scrollbar-track   { background: transparent; }
+::-webkit-scrollbar-thumb   { background: var(--color-surface-3); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-muted); }
+
+/* ============================================================
+   GLASSMORPHISM UTILITY CLASSES
+   ============================================================ */
+@layer utilities {
+  /* Standard glass panel */
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border-subtle);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Slightly more prominent glass */
+  .glass-medium {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--color-border-soft);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Input glass */
+  .glass-input {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--color-border-soft);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .glass-input:focus {
+    border-color: var(--color-accent-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);
+  }
+
+  /* Glow accents */
+  .glow-blue  { box-shadow: 0 0 18px rgba(59, 130, 246, 0.18); }
+  .glow-gold  { box-shadow: 0 0 18px rgba(212, 175, 55, 0.18); }
+  .glow-green { box-shadow: 0 0 16px rgba(16, 185, 129, 0.15); }
+  .glow-red   { box-shadow: 0 0 16px rgba(244, 63, 94, 0.15);  }
+
+  /* Number transition helper */
+  .tabular-nums { font-variant-numeric: tabular-nums; }
+}
+
+/* ============================================================
+   SIDEBAR TRANSITIONS
+   ============================================================ */
+.sidebar-expanded  { width: 240px; }
+.sidebar-collapsed { width: 68px; }
+.sidebar-label     { transition: opacity 0.2s ease, width 0.2s ease; }
+
+/* ============================================================
+   ANIMATED GRADIENT SHIMMER (chart placeholder)
+   ============================================================ */
+@keyframes shimmer {
+  0%   { background-position: -800px 0; }
+  100% { background-position:  800px 0; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.01) 0%,
+    rgba(255,255,255,0.05) 50%,
+    rgba(255,255,255,0.01) 100%
+  );
+  background-size: 800px 100%;
+  animation: shimmer 2.4s infinite linear;
+}
+
+/* ============================================================
+   PRICE FLASH ANIMATIONS
+   ============================================================ */
+@keyframes flash-green {
+  0%   { color: var(--color-positive); }
+  100% { color: inherit; }
+}
+@keyframes flash-red {
+  0%   { color: var(--color-negative); }
+  100% { color: inherit; }
+}
+.flash-green { animation: flash-green 0.6s ease-out; }
+.flash-red   { animation: flash-red 0.6s ease-out; }
+
+/* ============================================================
+   CHART GRID LINES
+   ============================================================ */
+.chart-grid line {
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-dasharray: 4 4;
+}
+
+/* ============================================================
+   TABLE ROW HOVER
+   ============================================================ */
+.table-row-hover {
+  transition: background-color 0.15s ease;
+}
+.table-row-hover:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
