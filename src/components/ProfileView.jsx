@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 
 const ProfileView = () => {
   const [profile, setProfile] = useState({
-    name: 'Andi Pratama',
+    name: 'anak baik',
     email: 'andi@marketpulse.io',
     role: 'Pro Trader',
     bio: 'Trading crypto and forex markets since 2018.',
