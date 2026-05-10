@@ -300,10 +300,10 @@ const Header = ({ activeNav, searchQuery, onSearchChange, setMobileOpen, setActi
                 color: '#09090b',
               }}
             >
-              AP
+              AB
             </div>
             <span className="text-xs font-medium hidden lg:block" style={{ color: '#a1a1aa' }}>
-              Andi
+              anak baik
             </span>
             <ChevronDown size={12} style={{ color: '#52525b' }} className="hidden lg:block" />
           </button>
@@ -330,10 +330,10 @@ const Header = ({ activeNav, searchQuery, onSearchChange, setMobileOpen, setActi
                   style={{ borderColor: 'rgba(255,255,255,0.06)' }}
                 >
                   <span className="text-sm font-semibold" style={{ color: '#f4f4f5' }}>
-                    Andi Pratama
+                    anak baik
                   </span>
                   <span className="text-xs" style={{ color: '#a1a1aa' }}>
-                    andi@marketpulse.io
+                    anakbaik@marketpulse.io
                   </span>
                 </div>
                 <div className="py-1">

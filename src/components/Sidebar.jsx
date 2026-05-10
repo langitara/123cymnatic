@@ -219,7 +219,7 @@ const Sidebar = ({ activeNav, onNavChange, mobileOpen, setMobileOpen }) => {
             color: '#09090b',
           }}
         >
-          AP
+          AB
         </div>
         <div
           className="overflow-hidden"
@@ -231,7 +231,7 @@ const Sidebar = ({ activeNav, onNavChange, mobileOpen, setMobileOpen }) => {
           }}
         >
           <p className="text-sm font-semibold" style={{ color: '#f4f4f5' }}>
-            Andi Pratama
+            anak baik
           </p>
           <p className="text-xs" style={{ color: '#52525b' }}>
             Pro Trader
